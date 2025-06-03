@@ -1,0 +1,221 @@
+     body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:#fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Estilo del encabezado */
+        header {
+            background-color: #007bff; /* Un azul profesional */
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efecto de movimiento en el encabezado (brillo) */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: moveGradient 2.5s linear infinite;
+        }
+
+        @keyframes moveGradient {
+            100% {
+                left: 125%;
+            }
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.8em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Contenedor principal para centrar el contenido */
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 30px auto; /* Centra el contenedor principal */
+            padding: 20px;
+            background-color: #0bb1bd;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        /* Estilo de la imagen principal bajo el encabezado */
+        .hero-image-container {
+            text-align: center; /* Centra la imagen */
+            margin: 20px 0 40px 0; /* Espacio superior e inferior */
+        }
+
+        .hero-image {
+            max-width: 80%; /* Ajusta el tamaño de la imagen */
+            height: auto;
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.25); /* Sombreado pronunciado */
+            transition: transform 0.3s ease; /* Efecto hover */
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02); /* Ligeramente más grande al pasar el ratón */
+        }
+
+        section {
+            padding: 30px 0;
+            border-bottom: 1px solid #eee;
+            text-align: center; /* Centrar el contenido de la sección */
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #0056b3;
+            font-size: 2em;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Efecto de subrayado en títulos de sección */
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: #007bff;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        h2:hover::after {
+            width: 70%;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify; /* Justificar el texto para mejor lectura */
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto; /* Centrar los párrafos justificados */
+        }
+
+        /* Galería de proyectos */
+        #galeria {
+            padding-bottom: 40px;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .proyecto-imagen {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .proyecto-imagen:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        }
+
+        .proyecto-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .proyecto-imagen p {
+            padding: 15px;
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+            margin: 0;
+        }
+
+        /* Botón Contáctanos */
+        .btn-contacto {
+            display: inline-block;
+            background-color: #28a745; /* Un verde vibrante */
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-top: 30px;
+        }
+
+        .btn-contacto:hover {
+            background-color: #218838;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Pie de página */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 40px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                margin-top: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            .hero-image {
+                max-width: 100%;
+            }
+            .galeria-grid {
+                grid-template-columns: 1fr;
+            }
+            .proyecto-imagen {
+                width: 90%;
+                margin: 15px auto;
+                height: 300px;
+            }
+        }
